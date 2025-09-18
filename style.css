@@ -1,0 +1,348 @@
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('fonts/Helvetica-Oblique.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+/* 清除默认 margin/padding，并设置背景色 */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+/* 固定在页面最上方 */
+.navbar {
+  position: fixed; /* 一直浮在顶部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5); /* 半透明背景 */
+  padding: 15px 40px;
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* 背景模糊效果 */
+}
+
+/* 内部布局 */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+   align-items: center; /* Logo 内部垂直居中 */
+
+}
+.logo img {
+  height: 65px; /* 图片高度 */
+  display: block; /* 避免图片底部留空 */
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+
+.nav-menu li a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1rem;
+  padding: 8px 16px;        /* 内边距让按钮更像矩形 */
+  border: 3px solid #dddddd;   /* 白色边框 */
+  border-radius: 30px;       /* 圆角 */
+  transition: all 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  background: #ff7b00;  /* 悬停时加背景色 */
+  color: #dddddd;          /* 文字保持白色 */
+  border-color: #ff7b00;
+}
+
+.hero {
+  position: relative;
+  width: calc(100% - 0px); /* 左右各留 20px */
+  height: calc(100vh - 0px); /* 上下各留 20px */
+  margin: 0px; /* 四周空隙 */
+  overflow: hidden;
+  border-radius: 0px; /* 父容器也加圆角 */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%) sepia(5%) hue-rotate(0.5deg) saturate(160%);
+  border-radius: 0px;
+}
+
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #dddddd;
+  text-align: center;
+  padding: 20px 40px;           /* 内边距 */
+  border: 8px solid #dddddd;       /* 白色边框 */
+  border-radius: 15px;          /* 圆角 */
+}
+
+.hero-text h1 {
+  font-size: 6rem;
+  margin: 0;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+}
+.hero-text h1, .hero-text h2 {
+  color: #dddddd;                  /* 文字颜色白色 */
+  margin: 10px 0;
+}
+
+
+.posts {
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  justify-content: flex-start; /* 顶部开始 */
+  align-items: center; /* 水平居中 */
+  min-height: 100vh; /* 填满屏幕高度 */
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.posts-title {
+  font-size: 3rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 50px; /* 标题和帖子之间间距 */
+  margin-top: 60px;
+  text-align: center;
+}
+
+.posts-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* 小屏幕自动换行 */
+  justify-content: center;
+  width: 65%;
+}
+
+.post {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  width: 400px;
+  height: 500px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.post img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.post-text {
+  padding: 15px;
+  text-align: center;
+}
+
+.post-text h3 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.post-text p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.featured-section {
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.featured-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 60%;
+  height: 700px; /* 固定高度，自动上下裁切 */
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+.featured-carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.featured-item {
+  min-width: 100%; /* 每次显示一张 */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持比例填满，超出上下部分会裁掉 */
+}
+
+
+/* 左右按钮 */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 25%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;   /* 去掉上/下空白 */
+  background: #f4f4f4;
+  min-height: 100vh; /* 占满屏幕高度 */
+}
+
+
+.video-title {
+
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+   margin-top: 80px;
+  text-align: center;
+}
+
+.video-container video,
+.video-container iframe {
+  width: 100%;           /* 宽度占满父容器 */
+  max-width: 1500px;     /* 可以根据需求加大最大宽度 */
+  height: 80vh;          /* 高度占据屏幕 80% */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.video-container {
+  width: 100%;       /* 占满父容器 */
+  max-width: 1500px; /* 最大宽度可以调大 */
+}
+
+.video-wrapper {
+  width: 100%;
+  height: 80vh;      /* 高度保持 */
+}
+
+.video-wrapper iframe {
+  width: 100%;       /* 宽度占满父容器 */
+  height: 100%;      /* 高度占满父容器 */
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+}
+
+.footer-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.footer-content p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.footer-content button {
+  background: #ff7b00;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer-content button:hover {
+  background: #e66a00;
+}
+
+.footer p.copyright {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #bbb;
+}
