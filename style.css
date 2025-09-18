@@ -196,6 +196,14 @@ body {
   color: #666;
 }
 
+.post-text p {
+  display: -webkit-box;       /* 创建伸缩盒子 */
+  -webkit-box-orient: vertical; /* 垂直排列 */
+  -webkit-line-clamp: 3;      /* 显示的行数，超过就截断 */
+  overflow: hidden;           /* 超出部分隐藏 */
+  text-overflow: ellipsis;    /* 用省略号显示截断部分 */
+}
+
 .featured-section {
   padding: 60px 20px;
   background: #fff;
@@ -212,7 +220,7 @@ body {
   position: relative;
   width: 100%;
   max-width: 60%;
-  height: 700px; /* 固定高度，自动上下裁切 */
+  height: 800px; /* 固定高度，自动上下裁切 */
   margin: 0 auto;
   overflow: hidden;
 }
