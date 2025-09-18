@@ -194,9 +194,6 @@ body {
 .post-text p {
   font-size: 1rem;
   color: #666;
-}
-
-.post-text p {
   display: -webkit-box;           /* 创建伸缩盒子（WebKit专用） */
   -webkit-box-orient: vertical;   /* 垂直排列（WebKit专用） */
   -webkit-line-clamp: 3;          /* 最多显示3行（WebKit专用） */
@@ -204,6 +201,7 @@ body {
   overflow: hidden;               /* 超出部分隐藏 */
   text-overflow: ellipsis;        /* 用省略号显示截断部分 */
 }
+
 
 
 .featured-section {
